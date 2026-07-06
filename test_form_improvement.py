@@ -82,12 +82,11 @@ class TestTextBoxForm:
         self.submit_form(driver)
         result_text = self.get_result_text(driver)
 
-        assert "ivanov.example.com" not in result_text, \
-            f"Ожидался корректный email, но отправлен: '{result_text}'"
+        assert "ivanov.example.com" not in result_text, f"Ожидался корректный email, но отправлен: '{result_text}'"
         print("Negative_email_without_at: passed")
 
     def test_negative_empty_form(self, driver):
-        """Негативный тест: пустой email"""
+        """Негативный тест: пустая форма"""
 
         self.submit_form(driver)
 
@@ -118,8 +117,7 @@ class TestTextBoxForm:
             self.submit_form(driver)
             result_text = self.get_result_text(driver)
 
-            assert invalid_email not in result_text, \
-                f"Ожидался корректный email, но отправлен: '{result_text}'"
+            assert invalid_email not in result_text, f"Ожидался корректный email, но отправлен: '{result_text}'"
 
         print("Negative_email_special_chars: passed")
 
@@ -183,8 +181,7 @@ class TestTextBoxForm:
         self.submit_form(driver)
         result_text = self.get_result_text(driver)
 
-        assert long_email not in result_text, \
-            f"Слишком длинный email: '{long_email}'"
+        assert long_email not in result_text, f"Слишком длинный email: '{long_email}'"
         print("Negative_email_too_long: passed")
 
 

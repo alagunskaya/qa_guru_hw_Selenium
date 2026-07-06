@@ -90,8 +90,7 @@ def test03():
         result_field = driver.find_element(By.ID, "output")
         result_text = result_field.text
 
-        assert "ivanov.example.com" not in result_text, \
-            f"Ожидался корректный email, но отправлен: '{result_text}'"
+        assert "ivanov.example.com" not in result_text, f"Ожидался корректный email, но отправлен: '{result_text}'"
         print("Negative test03: passed")
 
     finally:
@@ -99,7 +98,7 @@ def test03():
 
 
 def test04():
-    """Негативный тест: пустой email"""
+    """Негативный тест: пустая форма"""
     driver = webdriver.Chrome()
 
     try:
@@ -150,8 +149,7 @@ def test05():
             result_field = driver.find_element(By.ID, "output")
             result_text = result_field.text
 
-            assert invalid_email not in result_text, \
-                f"Ожидался корректный email, но отправлен: '{result_text}'"
+            assert invalid_email not in result_text, f"Ожидался корректный email, но отправлен: '{result_text}'"
 
         print("Negative test05: passed")
 
@@ -253,8 +251,7 @@ def test08():
         result_field = driver.find_element(By.ID, "output")
         result_text = result_field.text
 
-        assert long_email not in result_text, \
-            f"Ожидался корректный email, но отправлен: '{result_text}'"
+        assert long_email not in result_text, f"Ожидался корректный email, но отправлен: '{result_text}'"
         print("Negative test08: passed")
 
     finally:
