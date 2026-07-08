@@ -106,8 +106,7 @@ class TestTextBoxForm:
     @pytest.mark.positive
     @pytest.mark.parametrize("test_data", POSITIVE_TEST_DATA)
     def test_positive_valid_data(self, driver, wait, test_data):
-        fill_form(driver, test_data["name"], test_data["email"], test_data["current_address"],
-                  test_data["permanent_address"])
+        fill_form(driver, test_data["name"], test_data["email"], test_data["current_address"], test_data["permanent_address"])
         submit_and_wait_result(driver, wait)
         result_text = get_result_text(driver)
 
